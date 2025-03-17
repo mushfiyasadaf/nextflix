@@ -7,7 +7,7 @@ ARG API_KEY
 ENV TMDB_KEY=${API_KEY}
 
 RUN npm install
-COPY --from=builder /app/dist .
+RUN npm run build
 EXPOSE 80
 
 CMD ["npm", "start"]
